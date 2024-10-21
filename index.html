@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anamika Bharali - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            background-color: #D4D4D4;
+        }
+        header {
+            background-color: #367588;
+            color: #fff;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 6rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem; 
+            padding: 0.5rem 1rem; 
+            transition: background-color 0.2s; 
+        }
+        nav ul li a:hover {
+            background-color: #2a5a6a;
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-center;
+            padding: 80px 2rem 2rem;
+            scroll-margin-top: 60px;
+        }
+        #home {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+        }
+        #home img {
+            width: 40%;
+            max-width: 1200px;
+        }
+        #home .content {
+            width: 55%;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        #home h1 {
+            color: #367588;
+            margin-bottom: 1rem;
+            font-size: 3.75rem;
+        }
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            background-color: #367588;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2a5a6a;
+        }
+        .btn i {
+            margin-right: 0.5rem;
+        }
+        .section-header {
+            color: #367588;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            width: 100%;
+        }
+        #achievements, #contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100vh;
+            padding-top: 80px; /* Space for fixed navbar */
+        }
+        .achievements-content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            column-gap: 4rem;
+            margin-top: 2rem;
+        }
+        .achievement {
+            text-align: center;
+            width: 45%;
+            max-width: 550px;
+        }
+        .achievement:first-child img {
+            width: 110%;
+            max-width: 1000px; 
+            margin-bottom: 1.5rem;
+        }
+        .achievement:last-child img {
+            width: 100%;
+            max-width: 450px;
+            margin-bottom: 1.5rem;
+        }
+        .achievement p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        #projects .section-header {
+            margin-top: 0.1rem; /* Removes the gap above the heading */
+            margin-bottom: 0.5rem; /* Adjusts the gap below the heading */
+        }
+        #projects {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            min-height: 100vh;
+            gap: 0.25rem;
+        }
+        #projects .description {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 3rem;
+            row-gap: 2rem;
+        }
+        .project {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .project img {
+            width: 225px; 
+            height: 197px; 
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+        }
+        .project a {
+            color: #367588;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .project a:hover {
+            color: #244d5a;
+        }
+        .project span {
+            margin-top: 0.5rem;
+        }
+        #contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+        }
+        .contact-content {
+            display: flex; /* Make this a flex container */
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        #contact h1 {
+            color: #367588;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        #contact img {
+            width: 40%;
+            max-width: 1200px;
+        }
+        #contact .content {
+            width: 55%;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#achievements">ACHIEVEMENTS</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <img src="Main.JPG" alt="Anamika Bharali">
+        <div class="content">
+            <h1>Anamika Bharali</h1>
+            <p>I am a driven Data Expert  with 2.5 years of experience working at Amazon and Tata Motors in Data Analysis and Data Science roles. I recently completed a 7-month Data Science co-op at Veeco Instruments (San Jose).</p>
+            <br>
+            <p>I am currently pursuing a MS in Information Systems (Computer Software Engineering - CIP 14.0903) at Northeastern University, with graduation expected in December 2024.</p>
+            <br>
+            <p>I am motivated, collaborative, and eager to tackle complex challenges to create real impact.</p>
+            <div class="buttons">
+                <a href="https://github.com/anamikabharali" target="_blank" class="btn" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/anamikabharali/" target="_blank" class="btn" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="your-resume.pdf" download class="btn"><i class="fas fa-file-download"></i> Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2 class="section-header">Most Recent Achievements</h2>
+        <div class="achievements-content">
+            <div class="achievement">
+                <img src="Achievements1.JPG" alt="Achievement 1">
+                <p>LinkedIn Top Voice Badge in Data Science awarded on Jan 2024</p>
+            </div>
+            <div class="achievement">
+                <img src="Achievements2.JPG" alt="Achievement 2">
+                <p>Completed 7 month Co-op in Veeco Instruments as a Data Scientist (San Jose Facility)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-header">Projects</h2>
+        <p class="description">Here are a few articles I or my teammate (if it was a team project) wrote on the projects. Please check out my github for an extension of the same!!</p>
+        <div class="projects-grid">
+            <div class="project">
+                <a href="https://medium.com/@saniyakapur39/locatesmartai-leveraging-snowflake-and-langchain-to-uncover-optimal-living-locations-in-the-usa-e08dfcce0aa3">
+                    <img src="LocateAI.jpg" alt="Project 1">
+                    <span>LocateAI: Optimizing US Locations <br> with Snowflake & Langchain</span>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://medium.com/@saniyakapur39/shakespearify-ai-powered-transformation-of-text-into-illustrated-comics-3c11e840d9fb">
+                    <img src="Texttoimage.jpg" alt="Project 2">
+                    <span>Shakespearify: AI powered <br>Text-to-Image Comic Generation</span>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://medium.com/your-article-3-link">
+                    <img src="Spotify.jpg" alt="Project 3">
+                    <span>Spotify Reccomendations Using KNNs</span>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://medium.com/@saniyakapur39/transforming-document-management-with-ai-driven-automation-and-cloud-technology-9d7dba0b79c3">
+                    <img src="DocAI.jpg" alt="Project 4">
+                    <span>Talk to your Document with AI</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-content">
+            <img src="Contact.jpg" alt="Contact">
+            <div class="content">
+                <h1>Contact Me</h1>
+                <p>Email: anamikabharali23@gmail.com</p>
+                <p>Phone: (857) 370-2151</p>
+                <p>LinkedIn: linkedin.com/in/anamikabharali</p>
+                <br>
+                <p>Please feel free to leave a message, email or voicemail if I was unable to respond to your call and I will respond within 24 hours!</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
